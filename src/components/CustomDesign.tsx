@@ -5,14 +5,14 @@ const CustomDesign: React.FC = () => {
   return (
     <section className="custom-design">
       <div className="text-section">
-        <h2>Tạo thiết kế của riêng bạn</h2>
-        <p>Trải nghiệm thiết kế sản phẩm của riêng bạn một cách dễ dàng và thú vị. Công cụ thiết kế trực quan giúp bạn tạo ra các mẫu thiết kế chuyên nghiệp mà không cần bất kỳ kỹ năng thiết kế nào.</p>
+        <h2>Customize your own design</h2>
+        <p>Experience designing your own products easily and enjoyably. The intuitive design tool helps you create professional designs without any design skills.</p>
         <div className="buttons">
           {/* Use Link to navigate to DesignPage */}
           <Link to="/design">
-            <button className="button-33">Tạo thiết kế AI</button>
+            <button className="button-33">AI Customize</button>
           </Link>
-          <button className="button-33"> Tải lên mẫu</button>
+          <button className="button-33"> Upload template</button>
         </div>
       </div>
       <div className="image-section"></div>

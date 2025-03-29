@@ -15,7 +15,7 @@ const CartPage = () => {
 
   // Function to delete a product from the cart
   const handleDelete = (id: number) => {
-    console.log(id)
+    console.log(id);
     // Filter out the product with the matching id
     const updatedProducts = products.filter((product) => product.id !== id);
     // Update the state with the filtered products
@@ -36,7 +36,7 @@ const CartPage = () => {
       <div className="cart-container">
         {/* Left: Cart Items */}
         <div className="cart-items">
-          <h1 className="cart-title">Giỏ hàng của bạn</h1>
+          <h1 className="cart-title">Your Cart</h1>
           {products.map((product) => (
             <div className="cart-item" key={product.id}>
               <img
@@ -52,17 +52,17 @@ const CartPage = () => {
                   </span>
                 </p>
                 <p>
-                  <span>Màu:</span> {product.color}{' '}
-                  <span className="cart-info-span">SL:</span> {product.quantity}
+                  <span>Color:</span> {product.color}{' '}
+                  <span className="cart-info-span">Qty:</span> {product.quantity}
                 </p>
                 <div className="cart-item-actions">
-                  <button className="edit-button">Sửa</button>
+                  <button className="edit-button">Edit</button>
                   {/* Delete Button */}
                   <button
                     className="delete-button"
                     onClick={() => handleDelete(product.id)} // Remove the product on click
                   >
-                    Xóa
+                    Delete
                   </button>
                 </div>
               </div>
@@ -73,17 +73,17 @@ const CartPage = () => {
 
         {/* Right: Summary Section */}
         <div className="cart-summary">
-          <h2>Thông tin giao hàng</h2>
+          <h2>Shipping Information</h2>
           <div className="summary-details">
             <p>
-              <span className="key">Tạm tính</span>{' '}
+              <span className="key">Subtotal</span>{' '}
               <span>{calculateTotal().toLocaleString()}</span>
             </p>
             <p>
-              <span className="key">Giảm giá sản phẩm</span> <span>0</span>
+              <span className="key">Product Discount</span> <span>0</span>
             </p>
             <p>
-              <span className="key">Tổng tiền</span>{' '}
+              <span className="key">Total Amount</span>{' '}
               <span>{calculateTotal().toLocaleString()}</span>
             </p>
           </div>
@@ -92,29 +92,26 @@ const CartPage = () => {
               <input
                 type="text"
                 className="input-with-gradient"
-                placeholder="Nhập mã khuyến mãi"
+                placeholder="Enter discount code"
               />
             </div>
-            <button className="apply-button">Áp dụng</button>
+            <button className="apply-button">Apply</button>
           </div>
 
           <div className="invoice-checkbox">
             <input type="checkbox" className="styled-checkbox" />
-            <label>Xuất hóa đơn</label>
+            <label>Request Invoice</label>
           </div>
 
           <div className="note-wrapper">
-            <textarea className="note-box" placeholder="Ghi chú"></textarea>
+            <textarea className="note-box" placeholder="Notes"></textarea>
           </div>
 
-          <button className="checkout-button" onClick={handleNavigation}>THANH TOÁN NGAY</button>
+          <button className="checkout-button" onClick={handleNavigation}>CHECKOUT NOW</button>
         </div>
       </div>
-      <PreFooter />
-      <Footer />
     </div>
   );
 };
 
 export default CartPage;
-

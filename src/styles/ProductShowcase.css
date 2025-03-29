@@ -121,8 +121,9 @@
 /* Product card image styling */
 .product-card .image-wrapper img {
   width: 90%;
-  height: auto;
+  height: 85%;
   object-fit: cover; /* Ensure the image fits well */
+  border-radius: 10px;
 }
 
 

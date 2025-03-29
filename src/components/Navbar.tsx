@@ -17,22 +17,22 @@ const Navbar: React.FC = () => {
       <ul className="nav-links">
         <li>
           <Link to="/" className="nav-item">
-            Trang chủ
+            Home
           </Link>
         </li>
         <li>
           <Link to="/product" className="nav-item">
-            Sản phẩm
+            Product
           </Link>
         </li>
         <li>
           <Link to="/" className="nav-item">
-            Giới thiệu
+            About us
           </Link>
         </li>
         <li>
           <Link to="/" className="nav-item">
-            Tin tức
+            News
           </Link>
         </li>
       </ul>

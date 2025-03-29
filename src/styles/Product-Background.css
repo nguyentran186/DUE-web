@@ -1,12 +1,12 @@
  
   .product-background {
         position: relative;
-        height: 70vh; /* Full screen height */
+        height: 100vh; /* Full screen height */
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url('/DUE-web/images/product-background.png');
+        background-image: url('/DUE-web/images/background-product.jpg');
         background-size: cover; /* Ensures the image covers the entire container */
         background-position: center; /* Centers the image */
         background-repeat: no-repeat; /* Prevents tiling of the image */

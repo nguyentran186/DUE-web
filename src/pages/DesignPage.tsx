@@ -12,8 +12,7 @@ const DesignPage = () => {
   const [promptText, setPromptText] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
-
-  const bagTypes = ['Hộp cứng', 'Hộp mềm', 'Túi tote'];
+  const bagTypes = ['Hard box', 'Soft box', 'Tote bag'];
 
   const handleFinishClick = () => {
     setShowPopup(true); // Show the popup when Finish is clicked
@@ -50,38 +49,24 @@ const DesignPage = () => {
     }
   };
 
-  // Dummy translation function (replace with actual API if needed)
-const translateToEnglish = async (text: string): Promise<string> => {
-  // Replace this with actual translation logic or API call
-  const translations: { [key: string]: string } = {
-    "Hộp cứng": "Hard paper Bag",
-    "Hộp mềm": "Soft paper Bag",
-    "Túi tote": "Tote paper Bag",
+  const handleCreateImage = async (textInput: string) => {
+    console.log(textInput);
+    setLoading(true);
+    setError(null);
+    setImageSrc(null);
+
+    try {
+      const prompt = `Design a ${textInput} ${selectedBag}`;
+      // Generate the image
+      const imageUrl = await query({ inputs: prompt });
+      setImageSrc(imageUrl);
+    } catch (err: any) {
+      setError('Failed to generate image. Please try again later.');
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
-
-  return translations[text] || text;
-};
-
-const handleCreateImage = async (textInput: string) => {
-  console.log(textInput)
-  setLoading(true);
-  setError(null);
-  setImageSrc(null);
-
-  try {
-    // Translate the input text
-    const translatedText = await translateToEnglish(selectedBag);
-    const prompt = textInput + translatedText
-    // Generate the image
-    const imageUrl = await query({ inputs: prompt });
-    setImageSrc(imageUrl);
-  } catch (err: any) {
-    setError('Failed to generate image. Please try again later.');
-    console.log(err);
-  } finally {
-    setLoading(false);
-  }
-};
 
   const handleBagSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedBag(event.target.value);
@@ -92,16 +77,16 @@ const handleCreateImage = async (textInput: string) => {
       <Navbar />
       <div className="main-content">
         <div className="left-container">
-          <h2>Thiết kế bằng AI</h2>
+          <h2>AI Design</h2>
           <p>
-            Với công nghệ AI thông minh, chúng tôi giúp bạn tạo ra những thiết kế bao bì độc đáo chỉ
-            trong vài phút. Từ ý tưởng đến sản phẩm cuối cùng, AI sẽ hỗ trợ bạn tạo ra những mẫu
-            thiết kế ấn tượng và chuyên nghiệp
+            With intelligent AI technology, we help you create unique packaging designs in just a
+            few minutes. From concept to final product, AI will assist you in creating impressive
+            and professional designs.
           </p>
 
           <select className="select-menu" value={selectedBag || ''} onChange={handleBagSelection}>
             <option value="" disabled>
-              Chọn loại túi
+              Select bag type
             </option>
             {bagTypes.map((bag) => (
               <option key={bag} value={bag}>
@@ -112,7 +97,7 @@ const handleCreateImage = async (textInput: string) => {
 
           <textarea
             className="prompt-input"
-            placeholder="Nhập yêu cầu của bạn..."
+            placeholder="Enter your request..."
             value={promptText}
             onChange={(e) => setPromptText(e.target.value)}
           ></textarea>
@@ -120,14 +105,14 @@ const handleCreateImage = async (textInput: string) => {
           <button
             className="cssbuttons-io-button"
             onClick={() => {
-  if (promptText && selectedBag) {
-    handleCreateImage(`Design a ${promptText} ${selectedBag}`);
-  } else {
-    alert('Please fill in all fields');
-  }
-}}
+              if (promptText && selectedBag) {
+                handleCreateImage(`Design a ${promptText} ${selectedBag}`);
+              } else {
+                alert('Please fill in all fields');
+              }
+            }}
           >
-            Tạo
+            Create
             <div className="icon">
               <svg
                 height="24"
@@ -197,25 +182,25 @@ const handleCreateImage = async (textInput: string) => {
               </button>
             </div>
             <div className="button-92" onClick={handleFinishClick}>
-              <span className="sp">Hoàn thành</span>
+              <span className="sp">Finish</span>
             </div>
             {showPopup && (
               <div className="popup-overlay">
                 <div className="popup-content">
-                  <h2>Hoàn thành thiết kế</h2>
-                  <p>Bạn có chắc chắn muốn chốt mẫu thiết kế này chứ?</p>
+                  <h2>Complete Design</h2>
+                  <p>Are you sure you want to confirm this design?</p>
 
                   <div className="popup-buttons">
                     <button className="popup-button back-button action-button1" onClick={handleClosePopup}>
-                    Quay lại
+                      Go back
                     </button>
-                    <button className="popup-button add-to-cart-button button-92">Thêm vào giỏ hàng</button>
+                    <button className="popup-button add-to-cart-button button-92">Add to cart</button>
                   </div>
 
                   <div className="popup-modify">
                     <button className="popup-modify-button button-92">
-                    Tôi muốn chỉnh sửa 
-                    <br /> (bấm để liên hệ designer)
+                      I want to edit
+                      <br /> (Click to contact designer)
                     </button>
                   </div>
                 </div>
@@ -224,9 +209,6 @@ const handleCreateImage = async (textInput: string) => {
           </div>
         </div>
       </div>
-      
-      <PreFooter />
-      <Footer />
     </div>
   );
 };

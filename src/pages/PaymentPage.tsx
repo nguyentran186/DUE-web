@@ -23,34 +23,34 @@ const PaymentPage = () => {
         {/* Shipping Information */}
         <div className="shipping-info">
           <div className="shipping-info-header">
-            <h2>Thông tin giao hàng</h2>
+            <h2>Shipping Information</h2>
           </div>
           <form className='first-form'>
-            <input type="text" placeholder="Họ tên" />
+            <input type="text" placeholder="Full Name" />
             <input type="email" placeholder="Email" />
-            <input type="text" placeholder="Số điện thoại" />
-            <input type="text" placeholder="Địa chỉ" />
+            <input type="text" placeholder="Phone Number" />
+            <input type="text" placeholder="Address" />
             <div className="dropdown-group">
               <select>
-                <option value="">Tỉnh, thành phố</option>
+                <option value="">Province/City</option>
               </select>
               <select>
-                <option value="">Quận, huyện</option>
+                <option value="">District</option>
               </select>
               <select>
-                <option value="">Phường, xã</option>
+                <option value="">Ward/Commune</option>
               </select>
             </div>
           </form>
 
           <div className="shipping-method">
             <div className="shipping-method-header">
-              <h3>Phương thức giao hàng</h3>
+              <h3>Shipping Method</h3>
             </div>
             <form>
               <label>
                 <input type="checkbox" className="select-item-checkbox" />
-                Tốc độ tiêu chuẩn (từ 2 - 5 ngày làm việc)
+                Standard Delivery (2 - 5 business days)
                 <span className="price">0 VND</span>
               </label>
             </form>
@@ -58,34 +58,34 @@ const PaymentPage = () => {
 
           <div className="payment-method">
             <div className="payment-method-header">
-              <h3>Phương thức thanh toán</h3>
+              <h3>Payment Method</h3>
             </div>
             <form>
               <label>
                 <input type="checkbox" className="select-item-checkbox" />
-                Thanh toán trực tiếp khi nhận hàng (cọc 50% giá trị đơn hàng)
+                Pay on Delivery (50% deposit required)
               </label>
               <label>
                 <input type="checkbox" className="select-item-checkbox" />
-                Chuyển khoản ngân hàng
+                Bank Transfer
               </label>
               <label>
                 <input type="checkbox" className="select-item-checkbox" />
-                Thẻ tín dụng
+                Credit Card
               </label>
             </form>
           </div>
 
           {/* Return to Cart Link */}
           <a href="#" className="return-to-cart">
-            Quay lại giỏ hàng
+            Return to Cart
           </a>
         </div>
 
         {/* Order Summary */}
         <div className="order-summary">
           <div className="order-summary-header">
-            <h2>Đơn hàng</h2>
+            <h2>Order Summary</h2>
           </div>
           <div className="order-items">
             {products.map((product) => (
@@ -94,8 +94,8 @@ const PaymentPage = () => {
                 <div>
                   <h4>{product.name}</h4>
                   <p>
-                    <span>Màu: {product.color}</span>
-                    <span className='pad-left'>SL: {product.quantity}</span>
+                    <span>Color: {product.color}</span>
+                    <span className='pad-left'>Qty: {product.quantity}</span>
                   </p>
                 </div>
                 <span className="price">
@@ -107,18 +107,16 @@ const PaymentPage = () => {
 
           {/* Order Total */}
           <div className="order-total">
-            <p>Tạm tính<span>{calculateTotal().toLocaleString()} VND</span></p>
-            <p>Phí vận chuyển<span>0 VND</span></p>
+            <p>Subtotal<span>{calculateTotal().toLocaleString()} VND</span></p>
+            <p>Shipping Fee<span>0 VND</span></p>
             <hr />
-            <p className="total">Tổng cộng<span>{calculateTotal().toLocaleString()} VND</span></p>
+            <p className="total">Total<span>{calculateTotal().toLocaleString()} VND</span></p>
           </div>
 
           {/* Checkout Button */}
-          <button className="checkout-button">THANH TOÁN</button>
+          <button className="checkout-button">PAY NOW</button>
         </div>
       </div>
-      <PreFooter />
-      <Footer />
     </div>
   );
 };

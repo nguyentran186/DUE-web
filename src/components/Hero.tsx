@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="cta-box">
         <button className="button-33" onClick={handleNavigation}>
-          Khám phá ngay
+          Explore now
         </button>
       </div>
     </section>

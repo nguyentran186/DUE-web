@@ -14,9 +14,9 @@ const ProductItem = () => {
   const handleAddToCart = () => {
     const newProduct = {
       id: Date.now(), // Use a unique ID
-      name: 'Bao bì giấy cao cấp loại 1',
+      name: 'Premium Paper Packaging Type 1',
       price: 1000000,
-      color: 'Trắng',
+      color: 'White',
       quantity: 1,
       image: '/DUE-web/images/product.png',
     };
@@ -34,7 +34,7 @@ const ProductItem = () => {
       <div className="search-bar-section">
         {/* Search Bar */}
         <div className="search-bar">
-          <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+          <input type="text" placeholder="Search for products..." />
         </div>
       </div>
 
@@ -45,30 +45,25 @@ const ProductItem = () => {
         {/* Product Image */}
         <div className="product-image">
           <img src="/DUE-web/images/product-big.png" alt="Product" />
-          {/* <div className="thumbnail-row">
-            <div className="thumbnail"></div>
-            <div className="thumbnail"></div>
-            <div className="thumbnail"></div>
-          </div> */}
         </div>
 
         {/* Product Details */}
         <div className="product-details">
-          <h1>BAO BÌ GIẤY CAO CẤP LOẠI 1</h1>
-          <p>Đã bán 100</p>
+          <h1>PREMIUM PAPER PACKAGING TYPE 1</h1>
+          <p>Sold: 100</p>
 
-          <h3>Mô tả sản phẩm</h3>
+          <h3>Product Description</h3>
           <ul>
-            <li>Loại sản phẩm: Hộp mềm</li>
-            <li>Kích thước: 20x35cm</li>
-            <li>Màu sắc: Đen - Vàng - Trắng</li>
-            <li>Chịu tải: Dưới 3kg</li>
+            <li>Product Type: Soft Box</li>
+            <li>Size: 20x35cm</li>
+            <li>Color: Black - Yellow - White</li>
+            <li>Load Capacity: Under 3kg</li>
           </ul>
 
           <div className="quantity-section">
             <p>
-            <span className="main-text">Số lượng</span>
-            <span className="unit-text">[dvt: cái]</span>
+            <span className="main-text">Quantity</span>
+            <span className="unit-text">[unit: piece]</span>
             </p>
 
             <div className="quantity-options">
@@ -79,56 +74,52 @@ const ProductItem = () => {
           </div>
 
           <div className="color-section">
-            
-            <p><span className="main-text">Màu sắc</span></p>
+            <p><span className="main-text">Color</span></p>
             <div className="color-options">
-              <button>Trắng</button>
-              <button>Đen</button>
-              <button>Vàng</button>
+              <button>White</button>
+              <button>Black</button>
+              <button>Yellow</button>
             </div>
           </div>
 
-          <button className="contact-button">Liên hệ báo giá</button>
-          <button className="contact-button" onClick={handleAddToCart}>Thêm vào giỏ hàng</button>
+          <button className="contact-button">Contact for Pricing</button>
+          <button className="contact-button" onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
 
       {/* Additional Information Section */}
       <div className="additional-info">
         <div className="info-box">
-          <h3>Mô tả sản phẩm</h3>
+          <h3>Product Description</h3>
           <ul>
-            <li>Loại sản phẩm: Hộp mềm</li>
-            <li>Kích thước: 20x35cm</li>
-            <li>Màu sắc: Đen - Vàng - Trắng</li>
-            <li>Chịu tải: Dưới 3kg</li>
-            <li>Công dụng: Thích hợp để đựng thực phẩm, phụ kiện thời trang, ...</li>
+            <li>Product Type: Soft Box</li>
+            <li>Size: 20x35cm</li>
+            <li>Color: Black - Yellow - White</li>
+            <li>Load Capacity: Under 3kg</li>
+            <li>Usage: Suitable for storing food, fashion accessories, etc.</li>
           </ul>
         </div>
 
         <div className="info-box right">
-          <h3>Chính sách mua hàng</h3>
+          <h3>Purchase Policy</h3>
           <ul>
-            <li>Chính sách đổi trả</li>
-            <li>Chính sách giao hàng</li>
-            <li>Phương thức thanh toán</li>
-            <li>Hướng dẫn mua hàng</li>
+            <li>Return Policy</li>
+            <li>Shipping Policy</li>
+            <li>Payment Methods</li>
+            <li>Shopping Guide</li>
           </ul>
           <p>Hotline: 0949 686 006</p>
         </div>
       </div>
       {showPopup && (
         <div className="notification-popup">
-          Sản phẩm đã được thêm vào giỏ hàng!
+          Product has been added to the cart!
         </div>
       )}
         </div>
         <ReviewSection />
         <ProductShowcase />
-        <PreFooter />
-        <Footer />
     </div>
-
   );
 };
 

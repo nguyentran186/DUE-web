@@ -10,8 +10,8 @@ interface Review {
 }
 
 const initialReviews: Review[] = [
-  { id: 1, name: 'Hiệu Hữu', comment: 'Dịch vụ tận tâm, nhiệt tình, luôn sẵn sàng hỗ trợ những yêu cầu của khách hàng. Sản phẩm chất lượng cao và đủ số lượng như đã yêu cầu. Các mom nên sử dụng dịch vụ của On Ideas nhé :3', rating: 5, avatar: '/DUE-web/images/cat.jpeg' },
-  { id: 2, name: 'Ngọc Trâm', comment: 'Dịch vụ tận tâm, nhiệt tình, luôn sẵn sàng hỗ trợ những yêu cầu của khách hàng. Sản phẩm chất lượng cao và đủ số lượng như đã yêu cầu. Các mom nên sử dụng dịch vụ của On Ideas nhé :3', rating: 4, avatar: '/DUE-web/images/cat.jpeg' },
+  { id: 1, name: 'David', comment: 'Dedicated and enthusiastic service, always ready to support customer requests. High-quality products with the exact quantity as ordered. Moms should definitely use On Ideas services! :3', rating: 5, avatar: '/DUE-web/images/cat.jpeg' },
+  { id: 2, name: 'Elisabeth', comment: 'Dedicated and enthusiastic service, always ready to support customer requests. High-quality products with the exact quantity as ordered. Moms should definitely use On Ideas services! :3', rating: 4, avatar: '/DUE-web/images/cat.jpeg' },
 ];
 
 const Reviews: React.FC = () => {
@@ -49,7 +49,7 @@ const Reviews: React.FC = () => {
 
   return (
     <section className="reviews">
-      <h2 className="reviews-title">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h2>
+      <h2 className="reviews-title">Customer Reviews</h2>
       <div className="reviews-container">
         {/* Input Box */}
         <div className="input-box">
@@ -64,14 +64,14 @@ const Reviews: React.FC = () => {
           </div>
           <div className='input-box-content'>
           <textarea
-            placeholder="Nhập nhận xét của bạn..."
+            placeholder="Enter your review..."
             value={newComment}
             onChange={handleCommentChange}
             className="comment-box"
           ></textarea>
           </div>
           <button onClick={handleAddReview} className="submit-button">
-            Gửi đánh giá
+          Submit Review
           </button>
         </div>
 

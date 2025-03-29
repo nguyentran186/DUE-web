@@ -19,6 +19,8 @@ const LoginPage: React.FC = () => {
 
   // Handle login functionality
   const handleLogin = async (e: React.FormEvent) => {
+    window.location.href = '/';
+    return
     e.preventDefault();
     setLoading(true);
     setMessage('');
@@ -51,17 +53,17 @@ const LoginPage: React.FC = () => {
 
   return (
     <div className="login-container">
-      <h1 className="login-title">Xin chào!</h1>
+      <h1 className="login-title">Hello!</h1>
       <p className="login-subtitle-single-line">
-        Chào mừng bạn đến với <span className="login-subtitle-bold">ON IDEAS</span>
+        Welcome to <span className="login-subtitle-bold">ON IDEAS</span>
       </p>
       <p className="login-subtitle-line">
-        Đăng nhập
+        Login
       </p>
 
       <div className="login-form">
         <div className="login-input-container">
-          <label htmlFor="username" className="input-label">Tài khoản</label>
+          <label htmlFor="username" className="input-label">Username</label>
           <input
             id="username"
             type="text"
@@ -73,7 +75,7 @@ const LoginPage: React.FC = () => {
         </div>
 
         <div className="login-input-container">
-          <label htmlFor="password" className="input-label">Mật khẩu</label>
+          <label htmlFor="password" className="input-label">Password</label>
           <input
             id="password"
             type="password"
@@ -86,8 +88,11 @@ const LoginPage: React.FC = () => {
 
         <div className="button-group">
           <button className="button-79" onClick={handleLogin} disabled={loading}>
-            {loading ? 'Đang đăng nhập...' : 'Truy cập'}
+            {loading ? 'Logging...' : 'Access'}
           </button>
+          {/* <button className="button-79" onClick={handleLogin} disabled={loading}>
+            {loading ? 'Đang đăng nhập...' : 'Truy cập'}
+          </button> */}
         </div>
 
         {message && <p className="login-message">{message}</p>}
@@ -100,7 +105,7 @@ const LoginPage: React.FC = () => {
           </div>
         )}
 
-        <p className="forgot-password">Quên mật khẩu?</p>
+        <p className="forgot-password">Forgot password?</p>
       </div>
     </div>
   );

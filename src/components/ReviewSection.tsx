@@ -12,17 +12,17 @@ interface Review {
 const initialReviews: Review[] = [
   {
     id: 1,
-    name: 'Hiệu Hữu',
+    name: 'Hieu Huu',
     comment:
-      'Dịch vụ tận tâm, nhiệt tình, luôn sẵn sàng hỗ trợ những yêu cầu của khách hàng. Sản phẩm chất lượng cao và đủ số lượng như đã yêu cầu. Các mom nên sử dụng dịch vụ của On Ideas nhé :3',
+      'Dedicated and enthusiastic service, always ready to support customer requests. High-quality products and the correct quantity as requested. Highly recommend using On Ideas services! :3',
     rating: 5,
     avatar: '/DUE-web/images/cat.jpeg',
   },
   {
     id: 2,
-    name: 'Ngọc Trâm',
+    name: 'Ngoc Tram',
     comment:
-      'Dịch vụ tận tâm, nhiệt tình, luôn sẵn sàng hỗ trợ những yêu cầu của khách hàng. Sản phẩm chất lượng cao và đủ số lượng như đã yêu cầu. Các mom nên sử dụng dịch vụ của On Ideas nhé :3',
+      'Dedicated and enthusiastic service, always ready to support customer requests. High-quality products and the correct quantity as requested. Highly recommend using On Ideas services! :3',
     rating: 4,
     avatar: '/DUE-web/images/cat.jpeg',
   },
@@ -47,7 +47,7 @@ const ReviewSection: React.FC = () => {
 
   return (
     <div className="review-section">
-      <h2>Đánh giá sản phẩm</h2>
+      <h2>Product Reviews</h2>
       <div className="review-section-content">
         {/* Left: Review Input Section */}
         <div className="review-input">
@@ -63,7 +63,7 @@ const ReviewSection: React.FC = () => {
             ))}
           </div>
           <textarea
-            placeholder="Nhập đánh giá của bạn tại đây..."
+            placeholder="Enter your review here..."
             className="review-textarea"
             value={newComment}
             onChange={handleCommentChange}

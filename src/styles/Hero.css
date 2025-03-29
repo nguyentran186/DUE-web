@@ -1,11 +1,11 @@
 .hero {
   width: 100%;
   position: relative;
-  height: 130vh; /* Full screen height */
+  height: 90vh; /* Full screen height */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/DUE-web/images/background.png');
+  background-image: url('/DUE-web/images/paper-bags-different-colors-blue-background-top-view.jpg');
   background-size: cover; /* Ensures the image covers the entire container */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents tiling of the image */

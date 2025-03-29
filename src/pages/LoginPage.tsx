@@ -11,9 +11,9 @@ const LoginHomePage: React.FC = () => {
 
   return (
     <div className="login-container">
-      <h1 className="login-title">Xin chào!</h1>
+      <h1 className="login-title">Hello!</h1>
       <p className="login-subtitle-single-line">
-        Chào mừng bạn đến với <span className="login-subtitle-bold">ON IDEAS</span>
+        Welcome to <span className="login-subtitle-bold">ON IDEAS</span>
       </p>
       <div className="button-group">
         <button
