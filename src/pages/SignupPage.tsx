@@ -36,14 +36,14 @@ const SignupPage: React.FC = () => {
       if (axios.isAxiosError(err)) {
         // Check if it's an Axios error
         if (err.response?.status === 400) {
-          setError('Email đã được đăng ký. Vui lòng sử dụng email khác.');
+          setError('Email has already been registered. Please use a different email.');
         } else {
           // Handle other Axios-specific errors
-          setError('Có lỗi xảy ra. Vui lòng thử lại sau.');
+          setError('An error occurred. Please try again later.');
         }
       } else {
         // For non-Axios errors
-        setError('Đã xảy ra lỗi không xác định.');
+        setError('An unknown error occurred.');
       }
     } finally {
       setLoading(false);
@@ -52,15 +52,15 @@ const SignupPage: React.FC = () => {
 
   return (
     <div className="login-container">
-      <h1 className="login-title">Xin chào!</h1>
+      <h1 className="login-title">Hello!</h1>
       <p className="login-subtitle-single-line">
-        Chào mừng bạn đến với <span className="login-subtitle-bold">ON IDEAS</span>
+        Welcome to <span className="login-subtitle-bold">ON IDEAS</span>
       </p>
-      <p className="login-subtitle-line">Đăng ký</p>
+      <p className="login-subtitle-line">Sign Up</p>
 
       <form onSubmit={handleSubmit} className="login-form">
         <div className="login-input-container">
-          <label htmlFor="username" className="input-label">Tài khoản</label>
+          <label htmlFor="username" className="input-label">Username</label>
           <input
             id="username"
             type="email"
@@ -73,11 +73,11 @@ const SignupPage: React.FC = () => {
         </div>
 
         <div className="login-input-container">
-          <label htmlFor="password" className="input-label">Mật khẩu</label>
+          <label htmlFor="password" className="input-label">Password</label>
           <input
             id="password"
             type="password"
-            placeholder="Mật khẩu bao gồm 8 ký tự"
+            placeholder="Password must be at least 8 characters"
             value={password}
             onChange={handlePasswordChange}
             className="input-field"
@@ -86,11 +86,11 @@ const SignupPage: React.FC = () => {
         </div>
         
         <div className="login-input-container">
-          <label htmlFor="password" className="input-label">Nhập lại mật khẩu</label>
+          <label htmlFor="repassword" className="input-label">Confirm Password</label>
           <input
-            id="password"
+            id="repassword"
             type="password"
-            placeholder="Mật khẩu bao gồm 8 ký tự"
+            placeholder="Password must be at least 8 characters"
             value={repassword}
             onChange={handleRePasswordChange}
             className="input-field"
@@ -100,7 +100,7 @@ const SignupPage: React.FC = () => {
 
         <div className="button-group">
           <button className="button-79" type="submit" disabled={loading}>
-            {loading ? 'Đang tạo tài khoản...' : 'Đăng ký'}
+            {loading ? 'Creating account...' : 'Sign Up'}
           </button>
         </div>
       </form>

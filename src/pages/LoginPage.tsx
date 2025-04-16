@@ -21,17 +21,17 @@ const LoginHomePage: React.FC = () => {
           role="button"
           onClick={() => handleNavigate('/login')} // Navigate to Login page
         >
-          Đăng nhập
+          Login
         </button>
         <button
           className="button-78"
           role="button"
           onClick={() => handleNavigate('/signup')} // Navigate to Signup page
         >
-          Đăng ký
+          Sign Up
         </button>
       </div>
-      <p className="access-without-login">Truy cập không cần đăng nhập</p>
+      <p className="access-without-login">Access without logging in</p>
     </div>
   );
 };
